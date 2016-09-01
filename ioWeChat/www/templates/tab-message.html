@@ -1,0 +1,20 @@
+<ion-view>
+    <ion-content on-swipe-left="onSwipeLeft()">
+        <!--这里的rj-close-back-drop是自定义指令, 后面会讲是干嘛的-->
+        <ion-list rj-close-back-drop>
+          <ion-item class="item-avatar" on-hold="popupMessageOpthins($index)" rj-hold-active ng-repeat="message in messages">
+              <img ng-src="{{message.pic}}">
+              <!--这个就是来了新消息, 头像上的小红数字-->
+              <span class="rj-sm-red-icon" ng-show="message.showHints"><p ng-bind="message.noReadMessages"></p></span>
+              <h2 ng-bind="message.name"></h2>
+              <p class="rj-list-p" ng-bind="message.lastMessage.content"></p>
+              <span class="rj-push-right" ng-bind="message.lastMessage.time"></span>
+          </ion-item>
+          <img src="img/ben.png">
+<span class="rj-sm-red-icon"><p>1</p></span>
+<h2>小王</h2>
+<p class="rj-list-p">你在干什么?</p>
+<span class="rj-push-right">12:30</span>
+        </ion-list>
+    </ion-content>
+</ion-view>
