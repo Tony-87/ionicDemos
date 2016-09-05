@@ -5,6 +5,19 @@
 // the 2nd parameter is an array of 'requires'
 angular.module('starter', ['ionic'])
 
+  .controller('MyController', function($scope, $http) {
+    $scope.items = [1,2,3];
+    $scope.doRefresh = function() {
+      $http.get('/new-items')
+        .success(function(newItems) {
+          $scope.items = newItems;
+        })
+        .finally(function() {
+          // 停止广播ion-refresher
+          $scope.$broadcast('scroll.refreshComplete');
+        });
+    };
+  })
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     if (window.cordova && window.cordova.plugins.Keyboard) {
