@@ -10,7 +10,7 @@ angular.module('starter', ['ionic'])
     $scope.doRefresh = function() {
       $http.get('/new-items')
         .success(function(newItems) {
-          $scope.items = newItems;
+          $scope.items = newItems.items;
         })
         .finally(function() {
           // 停止广播ion-refresher

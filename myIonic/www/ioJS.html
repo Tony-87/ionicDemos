@@ -20,6 +20,8 @@
 
   <!-- your app's js -->
   <script src="js/app.js"></script>
+  <script src="js/mock.js"></script>
+  <script src="js/mockdata.js"></script>
 </head>
 
 <!-- ion-header-bar -->
@@ -37,15 +39,110 @@
 </ion-header-bar>
 
 
-<ion-content ng-controller="MyController">
+<!--<ion-content ng-controller="MyController">
   <ion-refresher
     pulling-text="下拉刷新..."
     on-refresh="doRefresh()">
   </ion-refresher>
   <ion-list>
-    <ion-item ng-repeat="item in items"></ion-item>
+    <ion-item ng-repeat="item in items">
+      <span>{{item}}</span>
+    </ion-item>
   </ion-list>
+</ion-content>-->
+
+<!--自适应容器-->
+<!-- <ion-pane>
+<ul>
+  <li>000</li>
+  <li>111</li>
+  <li>222</li>
+  <li>333</li>
+  <li>444</li>
+  <li>555</li>
+  <li>666</li>
+  <li>777</li>
+  <li>888</li>
+  <li>999</li>
+  <li>000</li>
+  <li>111</li>
+  <li>222</li>
+  <li>333</li>
+  <li>444</li>
+  <li>555</li>
+  <li>666</li>
+  <li>777</li>
+  <li>888</li>
+  <li>999</li>
+  <li>000</li>
+  <li>111</li>
+  <li>222</li>
+  <li>333</li>
+  <li>444</li>
+  <li>555</li>
+  <li>666</li>
+  <li>777</li>
+  <li>888</li>
+  <li>999</li>
+  <li>000</li>
+  <li>111</li>
+  <li>222</li>
+  <li>333</li>
+  <li>444</li>
+  <li>555</li>
+  <li>666</li>
+  <li>777</li>
+  <li>888</li>
+  <li>999</li>
+</ul>
+</ion-pane>-->
+<ion-content>
+<ion-scroll >
+  <ul>
+    <li>000</li>
+    <li>111</li>
+    <li>222</li>
+    <li>333</li>
+    <li>444</li>
+    <li>555</li>
+    <li>666</li>
+    <li>777</li>
+    <li>888</li>
+    <li>999</li>
+    <li>000</li>
+    <li>111</li>
+    <li>222</li>
+    <li>333</li>
+    <li>444</li>
+    <li>555</li>
+    <li>666</li>
+    <li>777</li>
+    <li>888</li>
+    <li>999</li>
+    <li>000</li>
+    <li>111</li>
+    <li>222</li>
+    <li>333</li>
+    <li>444</li>
+    <li>555</li>
+    <li>666</li>
+    <li>777</li>
+    <li>888</li>
+    <li>999</li>
+    <li>000</li>
+    <li>111</li>
+    <li>222</li>
+    <li>333</li>
+    <li>444</li>
+    <li>555</li>
+    <li>666</li>
+    <li>777</li>
+    <li>888</li>
+    <li>999</li>
+  </ul>
+</ion-scroll>
 </ion-content>
+
 
 
 <ion-footer-bar align-title="left" class="bar-assertive">
