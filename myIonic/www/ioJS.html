@@ -39,7 +39,9 @@
 </ion-header-bar>
 
 
-<!--<ion-content ng-controller="MyController">
+<!--ion-content-->
+<!-- <ion-content ng-controller="MyController" padding="true" scroll="true"
+              overflow-scroll="false" has-bouncing="false" >
   <ion-refresher
     pulling-text="下拉刷新..."
     on-refresh="doRefresh()">
@@ -96,8 +98,9 @@
   <li>999</li>
 </ul>
 </ion-pane>-->
-<ion-content>
-<ion-scroll >
+
+<!-- <ion-content>
+<ion-scroll  >
   <ul>
     <li>000</li>
     <li>111</li>
@@ -141,11 +144,44 @@
     <li>999</li>
   </ul>
 </ion-scroll>
-</ion-content>
+</ion-content>-->
+
+<!--<ion-content ng-controller="MyController2">
+  <ion-infinite-scroll
+    ng-if="moreDataCanBeLoaded()"
+    on-infinite="loadMore()"
+    distance="1%">
+  </ion-infinite-scroll>
+&lt;!&ndash;  <ion-list>
+    <ion-item ng-repeat="item in items">
+      <span>{{item}}</span>
+    </ion-item>
+  </ion-list>&ndash;&gt;
+<div>{{items.length}}</div>
+</ion-content>-->
+
+<ion-tabs class="tabs-dark tabs-icon-only">
+
+  <ion-tab title="首页" icon-on="ion-ios7-filing" icon-off="ion-ios7-filing-outline">
+    <!-- 标签 1 内容 --> 首页
+  </ion-tab>
+
+  <ion-tab title="关于" icon-on="ion-ios7-clock" icon-off="ion-ios7-clock-outline">
+    <!-- 标签 2 内容 -->  关于
+  </ion-tab>
+
+  <ion-tab title="设置" icon-on="ion-ios7-gear" icon-off="ion-ios7-gear-outline">
+    <!-- 标签 3 内容 -->设置
+  </ion-tab>
+
+  <ion-tab title="Status" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" >
+
+  </ion-tab>
+</ion-tabs>
 
 
-
-<ion-footer-bar align-title="left" class="bar-assertive">
+<!--
+<ion-footer-bar align-title="left" class="bar-dark">
   <div class="buttons">
     <button class="button">左侧按钮</button>
   </div>
@@ -153,7 +189,7 @@
   <div class="buttons" ng-click="doSomething()">
     <button class="button">右侧按钮</button>
   </div>
-</ion-footer-bar>
+</ion-footer-bar>-->
 
 
 </body>

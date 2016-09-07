@@ -1,5 +1,8 @@
 
-    //2.1 登录
+
     Mock.mock('/new-items', {
-       items: ["HTML5","JavaScript","AngularJS"]
+       'items|20': ["@name"]
+    });
+    Mock.mock('/more-items', {
+      'items|20': ["@name"]
     });
