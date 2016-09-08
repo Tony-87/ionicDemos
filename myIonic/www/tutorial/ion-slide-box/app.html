@@ -1,0 +1,39 @@
+<html ng-app="ionicApp">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title>slide box</title>
+
+  <link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
+  <script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
+
+  <link rel="stylesheet" href="app.css">
+  <script src="app.js"></script>
+  <script src="../../js/mock.js"></script>
+  <script src="../../js/mockdata.js"></script>
+</head>
+
+
+<body ng-controller="MainCtrl">
+
+
+<ion-content>
+
+  <ion-slide-box>
+    <ion-slide>
+      <div class="box blue">
+        <h1>BLUE</h1>
+        <button ng-click="nextSlide()">下一个滑块!</button>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div class="box yellow"><h1>YELLOW</h1></div>
+    </ion-slide>
+    <ion-slide on-slide-changed="slideHasChanged(index)">
+      <div class="box pink"><h1>PINK</h1></div>
+    </ion-slide>
+  </ion-slide-box>
+</ion-content>
+
+</body>
+</html>

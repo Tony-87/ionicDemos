@@ -1,0 +1,43 @@
+<html ng-app="ionicApp">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title>Inline Tabs</title>
+
+  <link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
+  <script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
+
+  <link rel="stylesheet" href="app.css">
+  <script src="app.js"></script>
+  <script src="../../js/mock.js"></script>
+  <script src="../../js/mockdata.js"></script>
+</head>
+
+
+<body ng-controller="MainCtrl">
+
+
+<ion-content>
+  <button ng-click="openModal()">打开model!</button>
+</ion-content>
+
+
+
+
+<script id="modal.html" type="text/ng-template">
+  <div class="modal">
+    <ion-header-bar>
+      <h1 class="title">我的模型标题</h1>
+    </ion-header-bar>
+    <ion-content>
+      Hello!
+
+      <button ng-click="closeModal()">关闭model!</button>
+    </ion-content>
+  </div>
+</script>
+
+
+
+</body>
+</html>

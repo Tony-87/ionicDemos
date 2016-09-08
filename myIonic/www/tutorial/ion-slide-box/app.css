@@ -1,0 +1,11 @@
+body {
+  cursor: url('http://ionicframework.com/img/finger.png'), auto;
+}
+.blue{background-color: rgb(67,135,241);height:100%;color:#FFF;text-align: center;vertical-align: middle;}
+.yellow{background-color: rgb(232,234,99);height:100%;color:#FFF;text-align: center;vertical-align: middle;}
+.pink{background-color: rgb(235,104,235);height:100%;color:#FFF;text-align: center;vertical-align: middle;}
+.pink h1{color:#FFF;}
+
+
+.ion-record:before{color:#F00;}
+
