@@ -1,0 +1,71 @@
+<html  ng-app="angularApp">
+<head>
+  <meta charset="utf-8">
+  <title>AngularJS 路由实例 - 菜鸟教程</title>
+</head>
+<body ng-controller="MainCtrl">
+
+
+
+
+<script id="contacts.html" type="text/ng-template">
+  <h1>My Contacts</h1>
+  <div ui-view></div>
+</script>
+
+<script id="contacts.detail.html" type="text/ng-template">
+  <span ng-bind='contactId'></span>
+</script>
+
+<script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+<script src="//cdn.bootcss.com/angular-ui-router/0.3.1/angular-ui-router.js"></script>
+<script>
+  var app = angular.module('angularApp', ['ui.router'])
+
+    .controller('MainCtrl', function ($scope) {
+      $scope.test = function () {
+        $state.go('contacts');  // 指定state名，相当于跳转到 /contacts
+        $state.go('contacts.detail', {contactId: 42});  // 相当于跳转到 /contacts/42
+      }
+    })
+    .config(function($stateProvider, $urlRouterProvider) {
+      $stateProvider
+        .state('contacts', {
+          url: '/contacts',
+          template: 'contacts.html',
+          controller: 'ContactCtrl'
+        })
+        .state('contacts.detail', {
+          url: "/contacts/:contactId",
+          templateUrl: 'contacts.detail.html',
+          controller: function ($stateParams) {
+            //If we got here from a url of /contacts/42
+            $stateParams.contactId === "42";
+          }
+        })
+        .state('report',{
+          views: {
+            'filters': {
+              templateUrl: 'report-filters.html',
+              controller: function($scope){ }
+            },
+            'tabledata': {
+              templateUrl: 'report-table.html',
+              controller: function($scope){  }
+            },
+            'graph': {
+              templateUrl: 'report-graph.html',
+              controller: function($scope){   }
+            }
+          }
+        })
+
+      ;
+
+
+    });
+</script>
+
+
+</body>
+</html>

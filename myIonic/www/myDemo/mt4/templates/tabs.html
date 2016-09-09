@@ -1,0 +1,20 @@
+<ion-tabs class="tabs-stable tabs-icon-top" >
+
+  <ion-tab title="首页" icon-off="ion-ios-home-outline" icon-on="ion-ios-home assertive " href="#/tab/home">
+    <ion-nav-view name="home-tab" class="assertive"></ion-nav-view>
+  </ion-tab>
+
+  <ion-tab title="商家" icon="ion-ios-list-outline" href="#/tab/shop">
+    <ion-nav-view name="shop-tab"></ion-nav-view>
+  </ion-tab>
+
+  <ion-tab title="商品" icon="ion-ios-cart-outline"  ui-sref="tabs.goods">
+    <ion-nav-view name="goods-tab"></ion-nav-view>
+  </ion-tab>
+
+
+  <ion-tab title="我的" icon="ion-ios-gear-outline"  ui-sref="tabs.setting">
+    <ion-nav-view name="setting-tab"></ion-nav-view>
+  </ion-tab>
+
+</ion-tabs>

@@ -4,8 +4,15 @@
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
   <title>Inline Tabs</title>
 
-  <link href="http://code.ionicframework.com/1.0.0-beta.1/css/ionic.min.css" rel="stylesheet">
-  <script src="http://code.ionicframework.com/1.0.0-beta.1/js/ionic.bundle.min.js"></script>
+  <!--
+    <link href="http://code.ionicframework.com/1.0.0-beta.1/css/ionic.min.css" rel="stylesheet">
+    <script src="http://code.ionicframework.com/1.0.0-beta.1/js/ionic.bundle.min.js"></script>
+  -->
+
+  <link href="../../lib/ionic/css/ionic.css" rel="stylesheet">
+  <script src="../../lib/ionic/js/ionic.bundle.js"></script>
+
+
   <link rel="stylesheet" href="css/iconfont.css">
   <script src="app.js"></script>
   <script src="../../js/mock.js"></script>
@@ -13,46 +20,37 @@
 </head>
 <body>
 
-
-
-<ion-nav-bar animation="nav-title-slide-ios7"
-             type="bar-positive"
-             back-button-type="button-icon"
-             back-button-icon="ion-arrow-left-c">
-
+<ion-nav-bar class="bar-stable nav-title-slide-ios7">
   <ion-nav-back-button class="button-clear">
     <i class="ion-arrow-left-c"></i> 后退
   </ion-nav-back-button>
-
 </ion-nav-bar>
 
-<ion-nav-view animation="slide-left-right"></ion-nav-view>
+<ion-nav-view animation="slide-left-right" style="border: solid 1px #F00;">
+
+</ion-nav-view>
 
 
 <script id="tabs.html" type="text/ng-template">
-  <ion-tabs tabs-style="tabs-icon-top" tabs-type="tabs-positive">
+  <ion-tabs class="tabs-stable tabs-icon-top">
 
     <ion-tab title="Home" icon="ion-home" href="#/tab/home">
-      <ion-nav-view name="home-tab"></ion-nav-view>
+      <ion-nav-view name="home-tab" style="border: solid 1px #0F0;"  ></ion-nav-view>
     </ion-tab>
 
-    <ion-tab title="About" icon="ion-ios7-information" href="#/tab/about">
-      <ion-nav-view name="about-tab"></ion-nav-view>
+    <ion-tab title="About" icon="ion-ios-information" href="#/tab/about">
+      <ion-nav-view name="about-tab" style="border: solid 1px #00F;" ></ion-nav-view>
     </ion-tab>
 
-    <ion-tab title="Contact" icon="ion-ios7-world"  ui-sref="tabs.contact">
-      <ion-nav-view name="contact-tab"></ion-nav-view>
-    </ion-tab>
-
-    <ion-tab title="处女座"  ui-sref="tabs.contact" icon="iconfont icon-chunvzuo" style="border: solid 1px #F00;"  >
-      <ion-nav-view name="contact-tab"></ion-nav-view>
+    <ion-tab title="Contact" icon="ion-ios-world" ui-sref="tabs.contact">
+      <ion-nav-view name="contact-tab" style="border: solid 1px #0FF;" ></ion-nav-view>
     </ion-tab>
 
   </ion-tabs>
 </script>
 
 <script id="home.html" type="text/ng-template">
-  <ion-view title="'Home'">
+  <ion-view title="'Home'" >
     <ion-content has-header="true" padding="true">
       <p>Example of Ionic tabs. Navigate to each tab, and
         navigate to child views of each tab and notice how
@@ -68,15 +66,14 @@
 
 <script id="facts.html" type="text/ng-template">
   <ion-view title="'Facts'">
-    <ion-content has-header="true" padding="true">
-      <p>Banging your head against a wall uses 150 calories an hour.</p>
-      <p>Dogs have four toes on their hind feet, and five on their front feet.</p>
-      <p>The ant can lift 50 times its own weight, can pull 30 times its own weight and always falls over on its right side when intoxicated.</p>
+    <ion-content has-header="true" padding="true" >
+
       <p>A cockroach will live nine days without it's head, before it starves to death.</p>
       <p>Polar bears are left handed.</p>
       <p>
         <a class="button icon ion-home" href="#/tab/home"> Home</a>
         <a class="button icon icon-right ion-chevron-right" href="#/tab/facts2">More Facts</a>
+        <a class="button icon icon-right ion-chevron-right" href="#/facts3">More Facts3</a>
       </p>
     </ion-content>
   </ion-view>
@@ -85,18 +82,41 @@
 <script id="facts2.html" type="text/ng-template">
   <ion-view title="'Also Factual'">
     <ion-content has-header="true" padding="true">
-      <p>111,111,111 x 111,111,111 = 12,345,678,987,654,321</p>
-      <p>1 in every 4 Americans has appeared on T.V.</p>
-      <p>11% of the world is left-handed.</p>
-      <p>1 in 8 Americans has worked at a McDonalds restaurant.</p>
+
       <p>$283,200 is the absolute highest amount of money you can win on Jeopardy.</p>
-      <p>101 Dalmatians, Peter Pan, Lady and the Tramp, and Mulan are the only Disney cartoons where both parents are present and don't die throughout the movie.</p>
+      <p>101 Dalmatians, Peter Pan, Lady and the Tramp, and Mulan are the only Disney cartoons where both parents are
+        present and don't die throughout the movie.</p>
       <p>
         <a class="button icon ion-home" href="#/tab/home"> Home</a>
         <a class="button icon ion-chevron-left" href="#/tab/facts"> Scientific Facts</a>
       </p>
     </ion-content>
   </ion-view>
+</script>
+
+<script id="facts3.html" type="text/ng-template">
+
+ <!--<ion-nav-view style="border: solid 1px #ffff00;">-->
+    <ion-view title="Facts 3"  ng-controller="Fact3Ctrl" >
+
+    <!--  <ion-nav-buttons side="left">
+        <button class="button back-button buttons button-clear header-item" ng-click="$ionicGoBack()">
+          <i class="ion-arrow-left-c"></i> 后退
+        </button>
+      </ion-nav-buttons>-->
+
+      <ion-content has-header="true" padding="true">
+        <p>Facts3</p>
+        <p>Facts3</p>
+        <p>Facts3</p>
+        <p>
+          <a class="button icon ion-home" href="#/tab/home"> Home</a>
+          <a class="button icon ion-chevron-left" href="#/tab/facts"> Scientific Facts</a>
+        </p>
+      </ion-content>
+    </ion-view>
+ <!--</ion-nav-view>-->
+
 </script>
 
 <script id="about.html" type="text/ng-template">
@@ -108,7 +128,8 @@
     </ion-nav-buttons>
     <ion-content has-header="true" padding="true">
       <h3>Create hybrid mobile apps with the web technologies you love.</h3>
-      <p>Free and open source, Ionic offers a library of mobile-optimized HTML, CSS and JS components for building highly interactive apps.</p>
+      <p>Free and open source, Ionic offers a library of mobile-optimized HTML, CSS and JS components for building
+        highly interactive apps.</p>
       <p>Built with Sass and optimized for AngularJS.</p>
       <p ng-if="aboutTab==1">
         <a class="button icon icon-right ion-chevron-right" href="#/tab/navstack">Tabs Nav Stack</a>

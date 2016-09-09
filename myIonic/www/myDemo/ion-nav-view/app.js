@@ -34,6 +34,16 @@
           }
         }
       })
+      .state('facts3',{
+       url:"/facts3",
+        templateUrl:"facts3.html"
+      /*  views: {
+          'home-tab': {
+            templateUrl: "facts3.html"
+          }
+        }*/
+
+      })
       .state('tabs.about', {
         url: "/about",
         views: {
@@ -58,14 +68,7 @@
           }
         }
       })
-      .state('tabs.test', {
-      url: "/test",
-      views: {
-        'about-tab': {
-          templateUrl: "test.html"
-        }
-      }
-    });
+    ;
 
 
     $urlRouterProvider.otherwise("/tab/home");
@@ -81,4 +84,16 @@
     console.log('HomeTabCtrl');
 
   })
+  .controller('Fact3Ctrl', function($scope,$ionicNavBarDelegate) {
+    $ionicNavBarDelegate.setTitle("aa");
+ $ionicNavBarDelegate.showBackButton();
+    $scope.setNavTitle = function(title) {
+      $ionicNavBarDelegate.setTitle(title);
+      $ionicNavBarDelegate.showBackButton();
+    }
+    $scope.goBack = function() {
+      $ionicNavBarDelegate.back();
+    }
+
+})
 ;

@@ -1,22 +1,29 @@
 ﻿angular.module('ionicApp', ['ionic'])
-
-
-  .config(function($stateProvider, $urlRouterProvider) {
+  .config(function ($ionicConfigProvider) {
+    $ionicConfigProvider.tabs.position("bottom");
+    $ionicConfigProvider.tabs.style('standard');
+  })
+  .config(function ($stateProvider, $urlRouterProvider) {
 
     $stateProvider
       .state('tabs', {
         url: "/tab",
         abstract: true,
-        templateUrl: "tabs.html"
+        templateUrl: "templates/tabs.html"
       })
       .state('tabs.home', {
         url: "/home",
         views: {
           'home-tab': {
-            templateUrl: "home.html",
+            templateUrl: "templates/home.html",
             controller: 'HomeTabCtrl'
           }
         }
+      })
+      .state('intro', {
+        url: "/intro",
+        templateUrl: "templates/intro/intro1.html",
+        controller: 'IntroCtrl'
       })
       .state('tabs.facts', {
         url: "/facts",
@@ -58,27 +65,23 @@
           }
         }
       })
-      .state('tabs.test', {
-      url: "/test",
-      views: {
-        'about-tab': {
-          templateUrl: "test.html"
-        }
-      }
-    });
+    ;
 
 
     $urlRouterProvider.otherwise("/tab/home");
 
   })
-  .controller('AboutCtrl',function($scope, $ionicNavBarDelegate){
-    $scope.setNavTitle = function(title) {
+  .controller('AboutCtrl', function ($scope, $ionicNavBarDelegate) {
+    $scope.setNavTitle = function (title) {
       $ionicNavBarDelegate.setTitle(title);
     }
-    $scope.aboutTab=1;
+    $scope.aboutTab = 1;
   })
-  .controller('HomeTabCtrl', function($scope) {
+  .controller('HomeTabCtrl', function ($scope) {
     console.log('HomeTabCtrl');
+
+  })
+  .controller('IntroCtrl',function($scope){
 
   })
 ;

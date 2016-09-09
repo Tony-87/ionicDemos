@@ -23,10 +23,22 @@
   </head>
 
   <body ng-app="starter">
-    <ion-nav-bar class="bar-positive">
+   <!-- <ion-nav-bar class="bar-positive">
       <ion-nav-back-button>
       </ion-nav-back-button>
-    </ion-nav-bar>
+    </ion-nav-bar>-->
+   <ion-header-bar align-title="left" class="bar-positive">
+     <div class="buttons">
+       <button class="button" ng-click="doSomething()">左侧按钮</button>
+     </div>
+
+     <h1 class="title">Title!</h1>
+
+     <div class="buttons">
+       <button class="button">右侧按钮</button>
+     </div>
+   </ion-header-bar>
+
     <ion-nav-view></ion-nav-view>
   </body>
 

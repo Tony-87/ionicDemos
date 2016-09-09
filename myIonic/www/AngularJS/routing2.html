@@ -1,0 +1,57 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>AngularJS 路由实例 - 菜鸟教程</title>
+</head>
+<body ng-app='ngRouteExample'>
+
+<h2>AngularJS 路由应用</h2>
+<div ng-controller="MainController">
+  Choose:
+  <a href="#users">user list</a> |
+  <a href="#users/alice">user: alice</a>
+
+  <div ng-view></div>
+</div>
+
+
+<script id="user-list.html" type="text/ng-template">
+  <h1>User List Page</h1>
+</script>
+<script id="user.html" type="text/ng-template">
+  <h1>User Page</h1>
+  <span ng-bind="params.username"></span>
+</script>
+
+<script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+<script src="http://apps.bdimg.com/libs/angular-route/1.3.13/angular-route.js"></script>
+<script>
+  var app = angular.module('ngRouteExample', ['ngRoute'])
+    .controller('MainController', function($scope) {
+    })
+    .controller('UserListCtrl', function($scope) {
+
+    })
+    .controller('UserCtrl', function($scope, $routeParams) {
+      console.log(JSON.stringify($routeParams));
+      $scope.params = $routeParams;
+    })
+    .config(function($routeProvider ) {
+      $routeProvider
+        .when('/users', {
+          templateUrl: 'user-list.html',
+          controller: 'UserListCtrl'
+        })
+        .when('/users/:username', {
+          templateUrl: 'user.html',
+          controller: 'UserCtrl'
+        });
+
+      // configure html5
+     //$locationProvider.html5Mode(true);
+    });
+</script>
+
+
+</body>
+</html>

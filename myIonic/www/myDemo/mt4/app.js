@@ -1,23 +1,26 @@
 ﻿angular.module('ionicApp', ['ionic'])
-
-
+  .config(function($ionicConfigProvider){
+    $ionicConfigProvider.tabs.position("bottom");
+    $ionicConfigProvider.tabs.style('standard');
+  })
   .config(function($stateProvider, $urlRouterProvider) {
 
     $stateProvider
       .state('tabs', {
         url: "/tab",
         abstract: true,
-        templateUrl: "tabs.html"
+        templateUrl: "templates/tabs.html"
       })
       .state('tabs.home', {
         url: "/home",
         views: {
           'home-tab': {
-            templateUrl: "home.html",
+            templateUrl: "templates/home.html",
             controller: 'HomeTabCtrl'
           }
         }
       })
+
       .state('tabs.facts', {
         url: "/facts",
         views: {
@@ -58,14 +61,7 @@
           }
         }
       })
-      .state('tabs.test', {
-      url: "/test",
-      views: {
-        'about-tab': {
-          templateUrl: "test.html"
-        }
-      }
-    });
+    ;
 
 
     $urlRouterProvider.otherwise("/tab/home");

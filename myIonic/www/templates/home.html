@@ -1,4 +1,15 @@
-<ion-view view-title="Home">
+<ion-header-bar align-title="left" class="bar-positive">
+  <div class="buttons">
+    <button class="button" ng-click="doSomething()">左侧按钮</button>
+  </div>
+
+  <h1 class="title">home</h1>
+
+  <div class="buttons">
+    <button class="button">右侧按钮</button>
+  </div>
+</ion-header-bar>
+
 <ion-view view-title="Home">
     <ion-content class="padding">
       <p>
@@ -7,5 +18,18 @@
       <p>
       	自动保存
       </p>
+      <ul style="line-height:40px;border: solid 1px #F00;">
+        <li style="background-color: #FFF;" >$light  #FFF</li>
+        <li style="background-color: #f8f8f8;" >$stable #f8f8f8</li>
+        <li style="background-color: #387ef5;" >$positive  #387ef5</li>
+        <li style="background-color: #11c1f3;" >$calm #11c1f3</li>
+        <li style="background-color: #33cd5f;" >$balanced #33cd5f</li>
+        <li style="background-color: #ffc900;" >$energized #ffc900</li>
+        <li style="background-color: #ef473a;" >$assertive #ef473a</li>
+        <li style="background-color: #886aea;" >$royal #886aea</li>
+        <li style="background-color: #444;" >$dark #444</li>
+
+
+      </ul>
     </ion-content>
 </ion-view>
