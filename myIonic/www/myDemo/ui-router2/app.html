@@ -1,0 +1,23 @@
+<html ng-app="ionicApp">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title>Inline Tabs</title>
+
+  <link href="../../lib/ionic/css/ionic.css" rel="stylesheet">
+  <script src="../../lib/ionic/js/ionic.bundle.js"></script>
+
+  <script src="app.js"></script>
+
+</head>
+<body  >
+
+<div ui-view="viewA"></div>
+<div ui-view="viewB"></div>
+<!-- Also a way to navigate -->
+<a ui-sref="route1">Route 1</a>
+<a ui-sref="route2">Route 2</a>
+
+
+</body>
+</html>
