@@ -44,6 +44,10 @@
         }*/
 
       })
+      .state('facts4',{
+        url:"/facts4",
+        templateUrl:"facts4.html"
+      })
       .state('tabs.about', {
         url: "/about",
         views: {

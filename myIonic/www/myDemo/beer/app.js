@@ -25,7 +25,8 @@
         templateUrl: "templates/intro/intro1.html",
         controller: 'IntroCtrl'
       })
-      .state('tabs.facts', {
+
+      /*.state('tabs.facts', {
         url: "/facts",
         views: {
           'home-tab': {
@@ -64,7 +65,7 @@
             templateUrl: "contact.html"
           }
         }
-      })
+      })*/
     ;
 
 
@@ -81,7 +82,8 @@
     console.log('HomeTabCtrl');
 
   })
-  .controller('IntroCtrl',function($scope){
-
+  .controller('IntroCtrl',function($scope,$ionicNavBarDelegate){
+    $ionicNavBarDelegate.showBackButton(true);
+    console.log(123);
   })
 ;

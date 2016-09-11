@@ -20,11 +20,11 @@
 </head>
 <body>
 
-<ion-nav-bar class="bar-stable nav-title-slide-ios7">
+ <ion-nav-bar class="bar-stable nav-title-slide-ios7">
   <ion-nav-back-button class="button-clear">
     <i class="ion-arrow-left-c"></i> 后退
   </ion-nav-back-button>
-</ion-nav-bar>
+</ion-nav-bar> 
 
 <ion-nav-view animation="slide-left-right" style="border: solid 1px #F00;">
 
@@ -74,6 +74,7 @@
         <a class="button icon ion-home" href="#/tab/home"> Home</a>
         <a class="button icon icon-right ion-chevron-right" href="#/tab/facts2">More Facts</a>
         <a class="button icon icon-right ion-chevron-right" href="#/facts3">More Facts3</a>
+        <a class="button icon icon-right ion-chevron-right" href="#/facts4">Facts4</a>
       </p>
     </ion-content>
   </ion-view>
@@ -83,7 +84,7 @@
   <ion-view title="'Also Factual'">
     <ion-content has-header="true" padding="true">
 
-      <p>$283,200 is the absolute highest amount of money you can win on Jeopardy.</p>
+      
       <p>101 Dalmatians, Peter Pan, Lady and the Tramp, and Mulan are the only Disney cartoons where both parents are
         present and don't die throughout the movie.</p>
       <p>
@@ -118,6 +119,35 @@
  <!--</ion-nav-view>-->
 
 </script>
+
+
+<script id="facts4.html" type="text/ng-template">
+ <ion-nav-view style="border:solid 2px #790821; ">
+ <ion-nav-view style="border:solid 2px #F97643; ">
+    <ion-view title="Facts 4"  >
+ 
+      <ion-content has-header="true" padding="true">
+        <p>Facts4,Facts4</p>
+        <p>Facts4</p>
+        <p>Facts4</p>
+        <p>
+          <a class="button icon ion-home" href="#/tab/home"> Home</a>
+          <a class="button icon ion-chevron-left" href="#/tab/facts"> Scientific Facts</a>
+        </p>
+      </ion-content>
+    </ion-view>
+    bbb
+ </ion-nav-view>
+<ion-content>
+<ion-view>
+  content2
+</ion-view>
+</ion-content>
+ 
+ </ion-nav-view>
+
+</script>
+
 
 <script id="about.html" type="text/ng-template">
   <ion-view title="'About'" ng-controller="AboutCtrl">
