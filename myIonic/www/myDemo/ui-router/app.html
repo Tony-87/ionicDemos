@@ -1,0 +1,63 @@
+<html ng-app="ionicApp">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title>Inline Tabs</title>
+
+  <link href="../../lib/ionic/css/ionic.css" rel="stylesheet">
+  <script src="../../lib/ionic/js/ionic.bundle.js"></script>
+
+  <script src="app.js"></script>
+
+</head>
+<body  >
+<div ui-view style="border: solid 1px #F00;"  ></div>
+
+<!-- We'll also add some navigation: -->
+
+<div style="border: solid 1px #0F0;">
+<a ui-sref="state1">State 1</a>
+<a ui-sref="state2">State 2</a>
+  <hr>
+  <a href="#/state1">Href 1</a>
+  <a href="#/a/state2">Href 2</a>
+  <hr>
+  <a href="#/state1/list">Href 1 List</a>
+  <a href="#/a/state2/b/list">Href 2 List</a>
+
+</div>
+
+
+<script id="state1.html" type="text/ng-template">
+  <h1>State 1</h1>
+  <hr/>
+  <a ui-sref="state1.list">Show List</a>
+  <div ui-view></div>
+</script>
+
+<script id="state1.list.html" type="text/ng-template">
+  <h3>List of State 1 Items</h3>
+  <ul>
+    <li ng-repeat="item in items">{{ item }}</li>
+  </ul>
+</script>
+
+
+
+<script id="state2.html" type="text/ng-template">
+  <h1>State 2</h1>
+  <hr/>
+  <a ui-sref="state2.list">Show List</a>
+  <div ui-view></div>
+</script>
+
+<script id="state2.list.html" type="text/ng-template">
+  <h3>List of State 2 Things</h3>
+  <ul>
+    <li ng-repeat="thing in things">{{ thing }}</li>
+  </ul>
+</script>
+
+
+</body>
+</html>

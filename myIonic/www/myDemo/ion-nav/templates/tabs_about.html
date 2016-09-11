@@ -1,0 +1,16 @@
+<ion-view title="'About'" ng-controller="AboutCtrl">
+  <ion-nav-buttons side="right">
+    <button class="button" ng-click="setNavTitle('香蕉')">
+      点我（香蕉）
+    </button>
+  </ion-nav-buttons>
+  <ion-content has-header="true" padding="true">
+    <h3>Create hybrid mobile apps with the web technologies you love.</h3>
+    <p>Free and open source, Ionic offers a library of mobile-optimized HTML, CSS and JS components for building
+      highly interactive apps.</p>
+    <p>Built with Sass and optimized for AngularJS.</p>
+    <p ng-if="aboutTab==1">
+      <a class="button icon icon-right ion-chevron-right" href="#/tab/navstack">Tabs Nav Stack</a>
+    </p>
+  </ion-content>
+</ion-view>

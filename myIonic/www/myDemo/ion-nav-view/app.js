@@ -4,6 +4,8 @@
   .config(function($stateProvider, $urlRouterProvider) {
 
     $stateProvider
+
+
       .state('tabs', {
         url: "/tab",
         abstract: true,
@@ -47,7 +49,7 @@
       .state('tabs.about', {
         url: "/about",
         views: {
-          'about-tab': {
+         'about-tab': {
             templateUrl: "about.html"
           }
         }
