@@ -82,8 +82,14 @@
     console.log('HomeTabCtrl');
 
   })
-  .controller('IntroCtrl',function($scope,$ionicNavBarDelegate){
-    $ionicNavBarDelegate.showBackButton(true);
-    console.log(123);
+  .controller('IntroCtrl',function($scope,$ionicHistory, $state){
+    $scope.goBack = function () {
+      if ($ionicHistory.backView() == null) {
+        $state.go("tabs.home");
+      }
+      else {
+        $ionicHistory.goBack();
+      }
+    }
   })
 ;

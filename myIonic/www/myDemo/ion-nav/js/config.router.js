@@ -4,59 +4,110 @@
 
 app.config(function ($stateProvider, $urlRouterProvider) {
 
+  // $urlRouterProvider.otherwise("/app");
+
   $stateProvider
 
-    .state('app', {
-      abstract:true,
-      url:"/app",
-      templateUrl:'app.html'
+
+    //简单页面切换
+    .state('page1', {
+      url: "/page1",
+      templateUrl: 'templates/pages/page1.html'
+    })
+    .state('page2', {
+      url: "/page2",
+      templateUrl: 'templates/pages/page2.html'
+    })
+    .state('page3', {
+      url: "/page3",
+      templateUrl: 'templates/pages/page3.html'
     })
 
-    .state('app.tabs', {
-      url: "/tab",
+    //abstrac简单嵌套
+    .state('parent', {
+      url: "/parent",
       abstract: true,
-      templateUrl: "templates/tabs.html"
+      templateUrl: "templates/abstract/parent.html"
     })
-    .state('app.tabs.home', {
+    .state('parent.child', {
+      url: "/child",
+      views: {
+        'viewParent': {
+          templateUrl: "templates/abstract/child.html"
+        }
+      }
+    })
+    .state('parent.child2', {
+      url: "/child2",
+      views: {
+        'viewParent': {
+          templateUrl: "templates/abstract/child2.html"
+        }
+      }
+    })
+    .state('mother', {
+      url: "/mother",
+      abstract: true,
+      templateUrl: "templates/abstract/mother.html"
+    })
+    .state('mother.girl', {
+      url: "/girl",
+      views: {
+        'viewParent': {
+          templateUrl: "templates/abstract/girl.html"
+        }
+      }
+    })
+    .state('mother.girl2', {
+      url: "/girl2",
+      views: {
+        'viewParent': {
+          templateUrl: "templates/abstract/girl2.html"
+        }
+      }
+    })
+    .state('uncle', {
+      url: "/uncle",
+      templateUrl: "templates/abstract/uncle.html"
+    })
+
+    //tabs
+    .state('tabs', {
+      url: "/tabs",
+      abstract: true,
+      templateUrl: "templates/tabs/tabs.html"
+    })
+    .state('tabs.home', {
       url: "/home",
       views: {
         'home-tab': {
-          templateUrl: "templates/tabs_home.html",
+          templateUrl: "templates/tabs/tabs_home.html",
           controller: 'HomeTabCtrl'
         }
       }
     })
-    .state('app.tabs.facts', {
+    .state('tabs.facts', {
       url: "/facts",
       views: {
         'home-tab': {
-          templateUrl: "templates/tabs_facts.html"
+          templateUrl: "templates/tabs/tabs_facts.html"
         }
       }
     })
-    .state('app.tabs.facts2', {
+    .state('tabs.facts2', {
       url: "/facts2",
       views: {
         'home-tab': {
-          templateUrl: "templates/tabs_facts2.html"
+          templateUrl: "templates/tabs/tabs_facts2.html",
+          controller: 'TabFact2Ctrl'
         }
       }
-    })
-    .state('app.facts3', {
-      url: "/facts3",
-      templateUrl: "templates/tabs_facts3.html"
-      /*  views: {
-       'home-tab': {
-       templateUrl: "facts3.html"
-       }
-       }*/
-
     })
     .state('tabs.about', {
       url: "/about",
       views: {
         'about-tab': {
-          templateUrl: "templates/tabs_about.html"
+          templateUrl: "templates/tabs/tabs_about.html"
         }
       }
     })
@@ -64,7 +115,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
       url: "/navstack",
       views: {
         'about-tab': {
-          templateUrl: "templates/nav-stack.html"
+          templateUrl: "templates/tabs/tabs_nav-stack.html"
         }
       }
     })
@@ -72,11 +123,75 @@ app.config(function ($stateProvider, $urlRouterProvider) {
       url: "/contact",
       views: {
         'contact-tab': {
-          templateUrl: "templates/contact.html"
+          templateUrl: "templates/tabs/tabs_contact.html"
         }
       }
-    });
+    })
+    .state('facts3', {
+      url: "/facts3",
+      templateUrl: "templates/tabs/tabs_facts3.html"
+    })
 
-  $urlRouterProvider.otherwise("/app/tab/home");
+    //card
+    .state('card', {
+      url: "/card",
+      abstract: true,
+      templateUrl: "templates/card/tabs.html"
+    })
+    .state('card.home', {
+      url: "/home",
+      views: {
+        'home-card': {
+          templateUrl: "templates/card/tabs_home.html",
+          controller: 'HomeTabCtrl'
+        }
+      }
+    })
+    .state('card.facts', {
+      url: "/facts",
+      views: {
+        'home-card': {
+          templateUrl: "templates/card/tabs_facts.html"
+        }
+      }
+    })
+    .state('card.facts2', {
+      url: "/facts2",
+      views: {
+        'home-card': {
+          templateUrl: "templates/card/tabs_facts2.html"
+        }
+      }
+    })
+    .state('card.about', {
+      url: "/about",
+      views: {
+        'about-tab': {
+          templateUrl: "templates/card/tabs_about.html"
+        }
+      }
+    })
+    .state('card.navstack', {
+      url: "/navstack",
+      views: {
+        'about-tab': {
+          templateUrl: "templates/card/tabs_nav-stack.html"
+        }
+      }
+    })
+    .state('card.contact', {
+      url: "/contact",
+      views: {
+        'contact-tab': {
+          templateUrl: "templates/card/tabs_contact.html"
+        }
+      }
+    })
+    .state('facts4', {
+      url: "/facts4",
+      templateUrl: "templates/card/tabs_facts4.html"
+    })
+  ;
+
 
 });

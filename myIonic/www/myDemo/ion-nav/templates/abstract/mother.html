@@ -1,0 +1,29 @@
+<ion-view >
+  <ion-content >
+
+     <p>这是Mother页面 ，下面是一个视图容器,黄色的</p>
+    <br>
+    <div>
+      <a href="#/parent/child">href child</a>
+      <a href="#/parent/child2">href child2</a>
+
+      <a href="#/mother/girl">href girl</a>
+      <a href="#/mother/girl2">href girl2</a>
+
+      <a href="#/uncle">href Uncle</a>
+    </div>
+    <br>
+    <div>
+      <a ui-sref="parent.child">uisref child</a>
+      <a ui-sref="parent.child2">uisref child2</a>
+
+      <a ui-sref="mother.girl">uisref girl</a>
+      <a ui-sref="mother.girl2">uisref girl2</a>
+
+      <a ui-sref="uncle">uisref Uncle</a>
+    </div>
+    <ion-nav-view name="viewParent"  animation="slide-right-left" style="border: solid 2px #FF0;height:100px;"></ion-nav-view>
+
+  </ion-content>
+
+</ion-view>
