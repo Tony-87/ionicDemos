@@ -4,7 +4,7 @@
 app
   .controller('AboutCtrl', function ($scope, $ionicNavBarDelegate) {
     $scope.setNavTitle = function (title) {
-      $ionicNavBarDelegate.title(title);
+      $ionicNavBarDelegate.setTitle(title);
     }
     $scope.aboutTab = 1;
   })
@@ -13,7 +13,6 @@ app
   })
   .controller('TabFact2Ctrl', function ($scope, $ionicNavBarDelegate, $ionicHistory) {
     //$ionicNavBarDelegate.showBackButton(false);
-    $scope.hideTabs=true;
   })
   .controller('Fact3Ctrl', function ($scope, $ionicNavBarDelegate, $ionicHistory, $state) {
     //   $ionicNavBarDelegate.showBackButton(true);
@@ -47,19 +46,5 @@ app
       $ionicNavBarDelegate.back();
     }
 
-  })
-  .controller('ListCtrl',function($scope){
-    $scope.books = Mock.mock({
-
-      'books|20': [{
-        'id|1-1000':1000,
-        'name':"@cname",
-        'addr':"@csentence",
-        'price':100,
-        'avator':Mock.Random.image('40x40','#FF6600')
-
-      }]
-    }).books;
-    console.log(JSON.stringify($scope.books));
   })
 ;

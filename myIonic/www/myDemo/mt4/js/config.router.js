@@ -107,8 +107,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
       url: "/about",
       views: {
         'about-tab': {
-          templateUrl: "templates/tabs/tabs_about.html",
-          controller:'AboutCtrl'
+          templateUrl: "templates/tabs/tabs_about.html"
         }
       }
     })
@@ -130,26 +129,9 @@ app.config(function ($stateProvider, $urlRouterProvider) {
     })
     .state('facts3', {
       url: "/facts3",
-      templateUrl: "templates/tabs/facts3.html"
+      templateUrl: "templates/tabs/tabs_facts3.html"
     })
-    .state('tabs.list',{
-      url:"/list",
-      views:{
-        'list-tab':{
-          templateUrl: "templates/tabs/tabs_list.html",
-          controller: 'ListCtrl'
-        }
-      }
-    })
-    .state('tabs.list.shopitem.chat-detail', {
-      url: '/chats/:chatId',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
-        }
-      }
-    })
+
     //card
     .state('card', {
       url: "/card",
