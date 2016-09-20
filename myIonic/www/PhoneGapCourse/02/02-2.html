@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../lib/angular/1.2.30/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="">
+  <div ng-controller="personController">
+    名: <input type="text" ng-model="person.firstName"><br>
+    姓: <input type="text" ng-model="person.lastName"><br>
+    <br>
+    姓名: {{person.firstName + " " + person.lastName}}
+  </div>
+</div>
+<script>
+  function personController($scope) { //不建议这样写
+    $scope.person = {
+      firstName: "John",
+      lastName: "Doe"
+    };
+  }
+</script>
+</body>
+</html>

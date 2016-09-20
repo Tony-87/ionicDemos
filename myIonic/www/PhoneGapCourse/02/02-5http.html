@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>$http使用</title>
+    <script src="../../lib/angular/1.2.30/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="">
+  <div ng-controller="customersController">
+    <ul>
+      <li ng-repeat="x in names | filter:'li'| orderBy:'Country'">
+        {{ x.Name + ', ' + x.Country }}
+      </li>
+    </ul>
+
+    <div>
+      <p>姓名：{{person.name | uppercase}}</p>
+      <p>姓名：{{person.name | lowercase}}</p>
+      <p>身价：{{person.price | currency}}</p>
+    </div>
+  </div>
+
+ 
+
+</div>
+<script>
+function customersController($scope,$http) {
+  
+  $scope.names=[
+    {"Name":"koko kela","Country":"USA"},
+    {"Name":"a li ba ba","Country":"China"},
+    {"Name":"Geryli","Country":"China"}
+  ]
+
+  $scope.person={
+    "name":"hardy Wang",
+    "age":18,
+    "price":1000000000
+  };
+
+  console.log($scope.person.name);
+  return;
+
+  //http get
+  $http.get("http://www.w3cschool.cc/try/angularjs/data/Customers_JSON.php")
+  .success(function(response) {$scope.names = response;})
+  .error(function(data){});
+
+  //http post
+  var url="";
+  var postData={text:'这是 post 的内容'};
+  var config={params:{id:'5'}}
+
+  $http.post(url,postData,config) 
+  .success(function(response) { $scope.names = response; })
+  .error(function(data){  
+    //错误代码
+  });
+
+  //http jsonp
+  var myUrl ="http://www.phonegap100.com/appapi.php?a=getPortalList&catid=20&page=1&callback=JSON_CALLBACK";
+  $http.jsonp(myUrl)
+  .success(function(data){
+    $scope.portalcate = data.result;
+  })
+  .error(function(){
+    alert('shibai');
+  });
+
+
+}
+</script>
+</body>
+</html>

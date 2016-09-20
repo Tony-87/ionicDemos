@@ -16,9 +16,13 @@
 <div ng-view></div>
 <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
 <script src="http://apps.bdimg.com/libs/angular-route/1.3.13/angular-route.js"></script>
+
 <script>
   angular.module('routingDemoApp',['ngRoute'])
     .config(['$routeProvider', function($routeProvider,$locationProvider){
+
+
+
       $routeProvider
         .when('/',{template:'这是首页页面'})
         .when('/computers',{template:'这是电脑分类页面'})

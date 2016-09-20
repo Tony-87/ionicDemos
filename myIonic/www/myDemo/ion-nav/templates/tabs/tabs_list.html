@@ -1,16 +1,29 @@
-<ion-view title="List" hide-tabs="true">
+<ion-view title="List" hide-tabs>
 
-  <ion-content has-header="true"  >
+  <ion-nav-buttons>
+<button ng-click="test()">测试按钮</button>
+  </ion-nav-buttons>
 
+  <ion-content has-header="true">
     <ion-list>
       <ion-item ng-repeat="item in books">
         <a class="item item-avatar" href="#/tabs/list/{{item.id}}">
-          <img  ng-src="{{item.avator}}">
+          <img ng-src="{{item.avator}}">
           <h2>{{item.name}}</h2>
           <p>{{item.addr}}</p>
         </a>
       </ion-item>
     </ion-list>
-
   </ion-content>
+
+
+  <style>
+    .jump-tag{position:fixed;top:12%;right:0;z-index:100;width:24px;height:80%;max-height:500px;font-size:0.75rem;text-align:center}
+    .jump-ul{height:100%}.jump-li{height:4.3%}.jump-tips{position:fixed;top:50%;left:50%;z-index:100;display:none;width:4.25rem;margin:-2.125rem 0 0 -2.125rem;padding:0.5625rem 0;font-size:3.125rem;color:#fff;text-align:center;line-height:1;background-color:rgba(0,0,0,0.6)}
+
+    @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2 / 3){.jump-tips{line-height:1}}
+  </style>
+  <div class="jump-tag"><ul class="jump-ul"><li class="jump-li" data-view="jump-star">✰</li><li class="jump-li" data-view="jumphot">热</li><li class="jump-li" data-view="jump-A">A</li><li class="jump-li" data-view="jump-B">B</li><li class="jump-li" data-view="jump-C">C</li><li class="jump-li" data-view="jump-D">D</li><li class="jump-li" data-view="jump-F">F</li><li class="jump-li" data-view="jump-G">G</li><li class="jump-li" data-view="jump-H">H</li><li class="jump-li" data-view="jump-J">J</li><li class="jump-li" data-view="jump-K">K</li><li class="jump-li" data-view="jump-L">L</li><li class="jump-li" data-view="jump-M">M</li><li class="jump-li" data-view="jump-N">N</li><li class="jump-li" data-view="jump-O">O</li><li class="jump-li" data-view="jump-P">P</li><li class="jump-li" data-view="jump-Q">Q</li><li class="jump-li" data-view="jump-R">R</li><li class="jump-li" data-view="jump-S">S</li><li class="jump-li" data-view="jump-T">T</li><li class="jump-li" data-view="jump-W">W</li><li class="jump-li" data-view="jump-X">X</li><li class="jump-li" data-view="jump-Y">Y</li><li class="jump-li" data-view="jump-Z">Z</li></ul><div class="jump-tips"></div></div>
+
+
 </ion-view>

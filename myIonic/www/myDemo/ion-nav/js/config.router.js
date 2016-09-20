@@ -4,7 +4,7 @@
 
 app.config(function ($stateProvider, $urlRouterProvider) {
 
-  // $urlRouterProvider.otherwise("/app");
+  $urlRouterProvider.otherwise("/tabs/home");
 
   $stateProvider
 
@@ -141,7 +141,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         }
       }
     })
-    .state('tabs.list.shopitem.chat-detail', {
+  /*  .state('tabs.list.shopitem.chat-detail', {
       url: '/chats/:chatId',
       views: {
         'tab-chats': {
@@ -149,7 +149,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
           controller: 'ChatDetailCtrl'
         }
       }
-    })
+    })*/
     //card
     .state('card', {
       url: "/card",

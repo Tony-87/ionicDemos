@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../lib/angular/1.2.30/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="">
+  <div ng-controller="namesController">
+    <ul>
+      <li ng-repeat="x in names">
+        {{ x.name + ', ' + x.country }}
+      </li>
+    </ul>
+  </div>
+</div>
+<script>
+function namesController($scope) {
+  $scope.names = [
+    {name:'Jani',country:'Norway'},
+    {name:'Hege',country:'Sweden'},
+    {name:'Kai',country:'Denmark'}
+  ];
+}
+</script>
+</body>
+</html>

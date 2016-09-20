@@ -1,10 +1,10 @@
-﻿angular.module('ionicApp', ['ionic'])
+﻿angular.module('ionicApp', ['ionic','ngRoute'])
 
 
-  .config(function($stateProvider, $urlRouterProvider,$locationProvider) {
+  .config(function( $routeProvider,$locationProvider) {
 
+  /*  $stateProvider
 
-    $stateProvider
       .state('tabs', {
         url: "/tab",
         abstract: true,
@@ -35,10 +35,18 @@
           }
         }
       })
+      .state('facts3',{
+       url:"/facts3",
+        templateUrl:"facts3.html"
+      })
+      .state('facts4',{
+        url:"/facts4",
+        templateUrl:"facts4.html"
+      })
       .state('tabs.about', {
         url: "/about",
         views: {
-          'about-tab': {
+         'about-tab': {
             templateUrl: "about.html"
           }
         }
@@ -59,18 +67,17 @@
           }
         }
       })
-      .state('tabs.test', {
-      url: "/test",
-      views: {
-        'about-tab': {
-          templateUrl: "test.html"
-        }
-      }
-    });
+    ;
+*/
 
-    //$locationProvider.html5Mode(true);
-    $urlRouterProvider.otherwise("/tab/home");
+    $locationProvider.html5Mode(true);
 
+    $routeProvider
+    .when('/tab/home',{
+         templateUrl: "home.html",
+            controller: 'HomeTabCtrl'
+    })
+    .otherwise("/tab/home");
   })
   .controller('AboutCtrl',function($scope, $ionicNavBarDelegate){
     $scope.setNavTitle = function(title) {
@@ -82,4 +89,16 @@
     console.log('HomeTabCtrl');
 
   })
+  .controller('Fact3Ctrl', function($scope,$ionicNavBarDelegate) {
+    $ionicNavBarDelegate.setTitle("aa");
+ $ionicNavBarDelegate.showBackButton();
+    $scope.setNavTitle = function(title) {
+      $ionicNavBarDelegate.setTitle(title);
+      $ionicNavBarDelegate.showBackButton();
+    }
+    $scope.goBack = function() {
+      $ionicNavBarDelegate.back();
+    }
+
+})
 ;

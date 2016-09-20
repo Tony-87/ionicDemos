@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MVC</title>
+    <script src="../../lib/angular/1.2.30/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="myApp">
+  <div ng-controller="firstController">
+     name:{{name}}
+     <br>
+     age:{{age}}
+     <br>
+     sex:{{sex}}
+
+      <div ng-controller="thirdController">
+          name:{{name}}
+          <br>
+          age:{{age}}
+          <br>
+          sex:{{sex}}
+      </div>
+
+  </div>
+  <hr>
+  <div ng-controller="secondController">
+    name:{{name}}
+    <br>
+    age:{{age}}
+    <br>
+    sex:{{sex}}
+  </div>
+<script>
+  var app = angular.module("myApp", []);
+  
+  app.run(['$rootScope',function($rootScope){
+    $rootScope.name='hello';
+  }]);
+
+  console.log(app);
+  app.controller('firstController',function($scope,$rootScope){
+    $scope.name='张三';
+    $rootScope.age='30';
+    $scope.sex='男';
+  });
+  
+  app.controller('secondController',function($scope){
+    $scope.name='李四';
+  })
+
+  app.controller('thirdController',function($scope){
+    $scope.name='王五';
+  })
+
+</script>
+</body>
+</html>

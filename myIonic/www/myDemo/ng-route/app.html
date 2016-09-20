@@ -1,0 +1,187 @@
+<html ng-app="ionicApp">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title>Inline Tabs</title>
+  <!--
+    <link href="http://code.ionicframework.com/1.0.0-beta.1/css/ionic.min.css" rel="stylesheet">
+    <script src="http://code.ionicframework.com/1.0.0-beta.1/js/ionic.bundle.min.js"></script>
+  -->
+  <link href="../../lib/ionic/css/ionic.css" rel="stylesheet">
+  <script src="../../lib/ionic/js/ionic.bundle.js"></script>
+  <script src="http://apps.bdimg.com/libs/angular-route/1.3.13/angular-route.js"></script>
+  <script src="app.js"></script>
+
+</head>
+<body>
+
+
+ <ion-nav-bar class="bar-stable nav-title-slide-ios7" >
+
+  <ion-nav-back-button class="button-clear">
+    <i class="ion-arrow-left-c"></i> 后退
+  </ion-nav-back-button>
+</ion-nav-bar>
+
+<ion-nav-view animation="slide-left-right" style="border: solid 2px #F00;">
+
+</ion-nav-view>
+
+
+<script id="tabs.html" type="text/ng-template">
+  <ion-tabs class="tabs-stable tabs-icon-top">
+
+    <ion-tab title="Home" icon="ion-home" href="#/tab/home">
+    <ion-nav-view name="home-tab" style="border: solid 2px #0F0;"  ></ion-nav-view>
+    </ion-tab>
+
+    <ion-tab title="About" icon="ion-ios-information" href="#/tab/about">
+      <ion-nav-view name="about-tab" style="border: solid 2px #00F;" ></ion-nav-view>
+    </ion-tab>
+
+    <ion-tab title="Contact" icon="ion-ios-world" ui-sref="tabs.contact">
+      <ion-nav-view name="contact-tab" style="border: solid 2px #0FF;" ></ion-nav-view>
+    </ion-tab>
+
+  </ion-tabs>
+</script>
+
+<script id="home.html" type="text/ng-template">
+  <ion-view title="'Home'" >
+    <ion-content has-header="true" padding="true">
+      <p>Example of Ionic tabs. Navigate to each tab, and
+        navigate to child views of each tab and notice how
+        each tab has its own navigation history.</p>
+      <p>
+        <a class="button icon icon-right ion-chevron-right" href="#/tab/facts">Scientific Facts</a>
+      </p>
+
+
+    </ion-content>
+  </ion-view>
+</script>
+
+<script id="facts.html" type="text/ng-template">
+  <ion-view title="'Facts'">
+    <ion-nav-buttons side="right">
+      <button>facts btn</button>
+    </ion-nav-buttons>
+
+    <ion-content has-header="true" padding="true" >
+
+      <p>A cockroach will live nine days without it's head, before it starves to death.</p>
+      <p>Polar bears are left handed.</p>
+      <p>
+        <a class="button icon ion-home" href="#/tab/home"> Home</a>
+        <a class="button icon icon-right ion-chevron-right" href="#/tab/facts2">More Facts</a>
+        <a class="button icon icon-right ion-chevron-right" href="#/facts3">More Facts3</a>
+        <a class="button icon icon-right ion-chevron-right" href="#/facts4">Facts4</a>
+      </p>
+    </ion-content>
+  </ion-view>
+</script>
+
+<script id="facts2.html" type="text/ng-template">
+  <ion-view title="'Also Factual'">
+    <ion-content has-header="true" padding="true">
+
+
+      <p>101 Dalmatians, Peter Pan, Lady and the Tramp, and Mulan are the only Disney cartoons where both parents are
+        present and don't die throughout the movie.</p>
+      <p>
+        <a class="button icon ion-home" href="#/tab/home"> Home</a>
+        <a class="button icon ion-chevron-left" href="#/tab/facts"> Scientific Facts</a>
+      </p>
+    </ion-content>
+  </ion-view>
+</script>
+
+<script id="facts3.html" type="text/ng-template">
+
+ <!--<ion-nav-view style="border: solid 1px #ffff00;">-->
+    <ion-view title="Facts 3"  ng-controller="Fact3Ctrl" >
+      <ion-nav-buttons side="right">
+        <button>facts3 btn</button>
+      </ion-nav-buttons>
+    <!--  <ion-nav-buttons side="left">
+        <button class="button back-button buttons button-clear header-item" ng-click="$ionicGoBack()">
+          <i class="ion-arrow-left-c"></i> 后退
+        </button>
+      </ion-nav-buttons>-->
+
+      <ion-content has-header="true" padding="true">
+        <p>Facts3</p>
+        <p>Facts3</p>
+        <p>Facts3</p>
+        <p>
+          <a class="button icon ion-home" href="#/tab/home"> Home</a>
+          <a class="button icon ion-chevron-left" href="#/tab/facts"> Scientific Facts</a>
+        </p>
+      </ion-content>
+    </ion-view>
+ <!--</ion-nav-view>-->
+
+</script>
+
+
+<script id="facts4.html" type="text/ng-template">
+
+ <ion-nav-view style="border:solid 2px #F97643; ">
+    <ion-view title="Facts 4"  >
+
+      <ion-content has-header="true" padding="true">
+        <p>Facts4,Facts4</p>
+        <p>Facts4</p>
+        <p>Facts4</p>
+        <p>
+          <a class="button icon ion-home" href="#/tab/home"> Home</a>
+          <a class="button icon ion-chevron-left" href="#/tab/facts"> Scientific Facts</a>
+        </p>
+      </ion-content>
+    </ion-view>
+    bbb
+ </ion-nav-view>
+
+
+
+</script>
+
+
+<script id="about.html" type="text/ng-template">
+  <ion-view title="'About'" ng-controller="AboutCtrl">
+    <ion-nav-buttons side="right">
+      <button class="button" ng-click="setNavTitle('香蕉')">
+        点我（香蕉）
+      </button>
+    </ion-nav-buttons>
+    <ion-content has-header="true" padding="true">
+      <h3>Create hybrid mobile apps with the web technologies you love.</h3>
+      <p>Free and open source, Ionic offers a library of mobile-optimized HTML, CSS and JS components for building
+        highly interactive apps.</p>
+      <p>Built with Sass and optimized for AngularJS.</p>
+      <p ng-if="aboutTab==1">
+        <a class="button icon icon-right ion-chevron-right" href="#/tab/navstack">Tabs Nav Stack</a>
+      </p>
+    </ion-content>
+  </ion-view>
+</script>
+
+<script id="nav-stack.html" type="text/ng-template">
+  <ion-view title="'Tab Nav Stack'">
+    <ion-content has-header="true" padding="true">
+      <p><img src="http://ionicframework.com/img/diagrams/tabs-nav-stack.png" style="width:100%"></p>
+    </ion-content>
+  </ion-view>
+</script>
+
+<script id="contact.html" type="text/ng-template">
+  <ion-view title="'Contact'">
+    <ion-content has-header="true" padding="true">
+      <p>@IonicFramework</p>
+      <p>@DriftyCo</p>
+    </ion-content>
+  </ion-view>
+</script>
+
+</body>
+</html>

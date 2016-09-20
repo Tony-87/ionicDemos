@@ -48,7 +48,7 @@ app
     }
 
   })
-  .controller('ListCtrl',function($scope){
+  .controller('ListCtrl',function($scope, $ionicNavBarDelegate){
     $scope.books = Mock.mock({
 
       'books|20': [{
@@ -60,6 +60,19 @@ app
 
       }]
     }).books;
+
+    $scope.test=function(){
+     // $ionicNavBarDelegate.setTitle("dele");
+       $ionicNavBarDelegate.showBar(false);
+    }
+
+    setTimeout(function(){
+     // $ionicNavBarDelegate.setTitle("dele");
+     // $ionicNavBarDelegate.showBar(false);
+    },1000)
+   // $ionicNavBarDelegate.setTitle("dele");
+    $ionicNavBarDelegate.showBar(false);
+
     console.log(JSON.stringify($scope.books));
   })
 ;

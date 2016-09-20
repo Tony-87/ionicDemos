@@ -1,8 +1,25 @@
-<ion-view>
-    <ion-content on-swipe-left="onSwipeLeft()">
+<ion-view title="微信(1)">
+  <ion-nav-buttons side="right">
+    <button class="button button-clear ion-plus" ng-click="" style="font-size: 25px;margin-right: 8px;"></button>
+  </ion-nav-buttons>
+
+    <ion-content on-swipe-left="onSwipeLeft()" has-header="true">
+      <div style="height:45px; background-color: #EFEFF4;padding:6px;border-bottom: solid 1px #CBCBD0;">
+        <div style="background-color: #FFF;width:100%;height:95%;border-radius: 3px;">
+          <button class="button-clear ion-ios-search" style="float:left; margin: 0px 3px 0 0; font-size: 20px;width:85%; ">搜索</button>
+          <button class="button-clear ion-android-microphone" style="float:right;margin: -5px 3px 0 0 ;font-size: 25px;"></button>
+        </div>
+      </div>
+      <div  style="height:45px; background-color: #EFEFF4;padding:5px;color:#6F7378; vertical-align: middle; ">
+        <i class="ion-android-desktop" style="font-size: 25px;display: inline-block;margin:5px 10px;   "></i>
+        <span style=" line-height: 35px; ">Windows 微信已登录</span>
+      </div>
+
+
         <!--这里的rj-close-back-drop是自定义指令, 后面会讲是干嘛的-->
         <ion-list rj-close-back-drop>
-          <ion-item class="item-avatar" on-hold="popupMessageOpthins($index)" rj-hold-active ng-repeat="message in messages">
+          <ion-item class="item-avatar" on-hold="popupMessageOpthins($index)" rj-hold-active ng-repeat="message in messages"
+                     >
               <img ng-src="{{message.pic}}">
               <!--这个就是来了新消息, 头像上的小红数字-->
               <span class="rj-sm-red-icon" ng-show="message.showHints"><p ng-bind="message.noReadMessages"></p></span>
@@ -10,11 +27,6 @@
               <p class="rj-list-p" ng-bind="message.lastMessage.content"></p>
               <span class="rj-push-right" ng-bind="message.lastMessage.time"></span>
           </ion-item>
-          <img src="img/ben.png">
-<span class="rj-sm-red-icon"><p>1</p></span>
-<h2>小王</h2>
-<p class="rj-list-p">你在干什么?</p>
-<span class="rj-push-right">12:30</span>
         </ion-list>
     </ion-content>
 </ion-view>
